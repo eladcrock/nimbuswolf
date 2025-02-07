@@ -1,5 +1,5 @@
 {
-  "name": "mantine-vite-template",
+  "name": "Nimbus Wolf Studios",
   "private": true,
   "type": "module",
   "version": "0.0.0",
@@ -27,14 +27,17 @@
     "@mantine/hooks": "^7.14.1",
     "@mantine/modals": "^7.14.1",
     "@mantine/tiptap": "^7.14.1",
+    "@tabler/icons": "^3.22.0",
     "@tiptap/extension-link": "^2.9.1",
     "@tiptap/pm": "^2.9.1",
     "@tiptap/react": "^2.9.1",
     "@tiptap/starter-kit": "^2.9.1",
+    "aos": "^2.3.4",
+    "emailjs-com": "^3.2.0",
     "embla-carousel-react": "^7.1.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.27.0"
+    "react-router-dom": "^6.28.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.12.0",
@@ -45,6 +48,7 @@
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.1",
     "@testing-library/user-event": "^14.5.2",
+    "@types/aos": "^3.0.7",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.2",

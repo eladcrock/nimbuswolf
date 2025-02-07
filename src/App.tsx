@@ -6,32 +6,39 @@ import { theme } from './theme';
 import { HeaderSimple } from './components/HeaderSimple';
 import '@mantine/core/styles.css';
 
-import { HeroImageBackground } from "./components/hero.tsx";
-import { FeaturesImages } from "./components/FeaturesImages.tsx";
-import { StatsGroup } from "./components/StatsGroup.tsx";
-import { CardsCarousel } from "./components/CardsCarousel.tsx";
-import { FooterSimple } from "./components/FooterSimple.tsx";
+import { HeroImageBackground } from "./components/hero";
+import { FeaturesImages } from "./components/FeaturesImages";
+import { StatsGroup } from "./components/StatsGroup";
+import { FooterSimple } from "./components/FooterSimple";
 import { ColorSchemeToggle } from './components/ColorSchemeToggle/ColorSchemeToggle';
+import { EmailBanner } from './components/EmailBanner';
+import { ArticlesCardsGrid } from './components/ArticlesCardsGrid';
+import { HeroTitle } from './components/HeroTitle';
 
 
 export default function App() {
   return (
-
     <MantineProvider theme={theme}>
       <HeaderSimple />
+
       <Router />
+      <br />
 
+      <HeroImageBackground />
+      <div id="services">
         <FeaturesImages />
-        <HeroImageBackground />
- 
-        <CardsCarousel />
+      </div>
+      <div id="projects">
+        <ArticlesCardsGrid />
+      </div>
+      <div id="about">
+        <HeroTitle />
+      </div>
+      <StatsGroup />
 
+      <EmailBanner />
 
-        <StatsGroup />
-        <FooterSimple />
-
-
-
+      <FooterSimple />
     </MantineProvider>
   );
 }

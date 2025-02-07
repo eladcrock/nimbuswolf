@@ -2,11 +2,13 @@
     position: relative;
     padding-top: rem(180px);
     padding-bottom: rem(130px);
-    background-image: url(https://images.unsplash.com/photo-1573164713988-8665fc963095?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=980&q=80);
+    background-image : url('https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    /*background-image: url('src/components/images/laptop.jpg');*/
+    /* background-image: url(https://images.unsplash.com/photo-1573164713988-8665fc963095?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=980&q=80); */
     background-size: cover;
     background-position: center;
   
-    @media (max-width: $mantine-breakpoint-xs) {
+    @media (max-width: 576px) { /* Replace 576px with the actual value of $mantine-breakpoint-xs */
       padding-top: rem(80px);
       padding-bottom: rem(50px);
     }
@@ -30,7 +32,7 @@
       Greycliff CF,
       var(--mantine-font-family);
   
-    @media (max-width: $mantine-breakpoint-xs) {
+    @media (max-width: 576px) {
       font-size: rem(28px);
       text-align: left;
     }
@@ -44,7 +46,7 @@
     color: var(--mantine-color-gray-0);
     text-align: center;
   
-    @media (max-width: $mantine-breakpoint-xs) {
+    @media (max-width: 576px) {
       font-size: var(--mantine-font-size-md);
       text-align: left;
     }
@@ -57,7 +59,7 @@
     padding-left: var(--mantine-spacing-md);
     padding-right: var(--mantine-spacing-md);
   
-    @media (max-width: $mantine-breakpoint-xs) {
+    @media (max-width: 576px) {
       flex-direction: column;
     }
   }
@@ -70,7 +72,7 @@
       margin-left: var(--mantine-spacing-md);
     }
   
-    @media (max-width: $mantine-breakpoint-xs) {
+    @media (max-width: 576px) {
       &:not(:first-of-type) {
         margin-top: var(--mantine-spacing-md);
         margin-left: 0;
@@ -82,7 +84,7 @@
     color: var(--mantine-color-white);
     background-color: rgba(255, 255, 255, 0.4);
   
-    @mixin hover {
+    &:hover {
       background-color: rgba(255, 255, 255, 0.45);
     }
   }

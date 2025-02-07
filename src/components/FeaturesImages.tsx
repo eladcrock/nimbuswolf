@@ -1,35 +1,59 @@
-import { Image, Text, Container, ThemeIcon, Title, SimpleGrid } from '@mantine/core';
+import { Container, Image, SimpleGrid, Text, ThemeIcon, Title } from '@mantine/core';
 import IMAGES from './images';
 import classes from './FeaturesImages.module.css';
+
 import '@mantine/core/styles.css';
 
+import { useEffect } from 'react';
+import AOS from 'aos';
+
+import 'aos/dist/aos.css';
 
 const data = [
+
+
   {
-    image: 'auditors',
-    title: 'Pharmacists',
-    description: 'Azurill can be seen bouncing and playing on its big, rubbery tail',
+    image: 'palette',
+    title: 'Logos and Branding',
+    description:
+      'Create a memorable identity that resonates with your audience and reflects your values.',
   },
   {
-    image: 'lawyers',
-    title: 'Lawyers',
-    description: 'Fans obsess over the particular length and angle of its arms',
+    image: 'magnify',
+    title: 'Website Design & SEO ',
+    description:
+      'Designing user-friendly, visually striking websites that drive engagement and conversions.',
+  },
+
+  {
+    image: 'photo',
+    title: 'Motion Graphics & 3D Animation',
+    description:
+      "Breathtaking animations that captivate and communicate your story in a way static designs can't.",
   },
   {
-    image: 'accountants',
-    title: 'Bank owners',
-    description: 'They divvy up their prey evenly among the members of their pack',
+    image: 'chart',
+    title: 'Social Media Content',
+    description:
+      'Enhance your brand’s online presence with tailored strategies and compelling content that engages your audience.',
   },
-  {
-    image: 'others',
-    title: 'Others',
-    description: 'Phanpy uses its long nose to shower itself',
-  },
+
+
 ];
 
 export function FeaturesImages() {
+  useEffect(() => {
+    AOS.init({ once: true });
+  }, []);
+
   const items = data.map((item) => (
-    <div className={classes.item} key={item.image}>
+    <div
+      data-aos="fade-right"
+      data-aos-offset="400"
+      data-aos-easing="linear"
+      className={classes.item}
+      key={item.image}
+    >
       <ThemeIcon variant="light" className={classes.itemIcon} size={60} radius="md">
         <Image src={IMAGES[item.image]} />
       </ThemeIcon>
@@ -44,18 +68,31 @@ export function FeaturesImages() {
   ));
 
   return (
-    <Container size={700} className={classes.wrapper}>
-      <Text className={classes.supTitle}>Use cases</Text>
+    <Container
+      size={700}
+      className={classes.wrapper}
+      data-aos="fade-in"
+      data-aos-offset="300"
+      data-aos-easing="ease-in-sine"
+    >
+      <Text className={classes.supTitle}>our Services</Text>
 
       <Title className={classes.title} order={2}>
-        PharmLand is <span className={classes.highlight}>not</span> just for pharmacists
+        Delivering
+        <span
+          className={classes.highlight}
+          data-aos="zoom-in"
+          data-aos-offset="360"
+          data-aos-easing="linear"
+        >
+          IMPACT
+        </span>
       </Title>
 
       <Container size={660} p={0}>
         <Text c="dimmed" className={classes.description}>
-          Its lungs contain an organ that creates electricity. The crackling sound of electricity
-          can be heard when it exhales. Azurill’s tail is large and bouncy. It is packed full of the
-          nutrients this Pokémon needs to grow.
+          Nimbus Wolf Studios crafts creative solutions that resonate, engage, to deliver results.
+          Explore our services to see how we can bring your goals into focus.
         </Text>
       </Container>
 

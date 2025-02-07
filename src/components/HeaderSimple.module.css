@@ -1,4 +1,5 @@
 .header {
+    
     height: rem(56px);
     margin-bottom: rem(120px);
     background-color: var(--mantine-color-body);
@@ -27,7 +28,8 @@
     }
   
     [data-mantine-color-scheme] &[data-active] {
-      background-color: var(--mantine-color-blue-filled);
+      background: linear-gradient(to right, var(--mantine-color-cyan-filled), var(--mantine-color-blue-filled));
+      
       color: var(--mantine-color-white);
     }
   }

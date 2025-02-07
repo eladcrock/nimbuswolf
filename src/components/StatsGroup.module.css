@@ -1,7 +1,7 @@
 .root {
     display: flex;
     background-image: linear-gradient(
-      -60deg,
+      -135deg,
       var(--mantine-color-blue-4) 0%,
       var(--mantine-color-blue-7) 100%
     );
