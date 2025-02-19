@@ -28,7 +28,7 @@
     }
   
     [data-mantine-color-scheme] &[data-active] {
-      background: linear-gradient(to right, var(--mantine-color-cyan-filled), var(--mantine-color-blue-filled));
+      background: linear-gradient(to right, #4b0082, #8a2be2);
       
       color: var(--mantine-color-white);
     }

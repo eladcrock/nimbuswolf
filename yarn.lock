@@ -4440,6 +4440,11 @@ vite-node@2.1.5:
     pathe "^1.1.2"
     vite "^5.0.0"
 
+vite-plugin-open-graph@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.npmjs.org/vite-plugin-open-graph/-/vite-plugin-open-graph-2.0.6.tgz"
+  integrity sha512-puGPr/V4C0HN3fxtvglulxmkPZiQp6yoASZqyH54LrK/DKiOgjC0V3glWcE6BFto3X3NK50aasE6tWruzAnEMA==
+
 vite-tsconfig-paths@^5.0.1:
   version "5.1.2"
   resolved "https://registry.npmjs.org/vite-tsconfig-paths/-/vite-tsconfig-paths-5.1.2.tgz"
