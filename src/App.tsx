@@ -28,6 +28,7 @@ export default function App() {
       <div id="services">
         <FeaturesImages />
       </div>
+      <br />
       <div id="projects">
         <ArticlesCardsGrid />
       </div>

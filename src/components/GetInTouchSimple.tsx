@@ -84,8 +84,20 @@ export function GetInTouchSimple({ onClose }: GetInTouchSimpleProps) {
         <Button type="submit"
         fullWidth
         variant="gradient"
-        gradient={{ from: 'violet', to: 'cyan' }}
-        >Send Message</Button>
+        gradient={{ from: 'violet', to: 'cyan' }}style={{
+          boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', // Add drop shadow
+          transition: 'transform 0.2s ease, box-shadow 0.2s ease', // Add transition for transform and box-shadow
+        }}
+        onMouseDown={(e) => {
+          e.currentTarget.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)'; // Recess button on click
+          e.currentTarget.style.transform = 'translateY(2px)'; // Move button down on click
+        }}
+        onMouseUp={(e) => {
+          e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)'; // Reset box-shadow on release
+          e.currentTarget.style.transform = 'translateY(0)'; // Reset transform on release
+        }}
+      >
+        Send Message</Button>
       </Group>
     </form>
   );

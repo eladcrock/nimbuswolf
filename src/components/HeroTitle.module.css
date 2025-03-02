@@ -53,11 +53,17 @@
     height: rem(54px);
     padding-left: rem(38px);
     padding-right: rem(38px);
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Add transition for smooth animation */
   
     @media (max-width: 576px) {
       height: rem(54px);
       padding-left: rem(18px);
       padding-right: rem(18px);
       flex: 1;
+    }
+
+    &:hover {
+      transform: scale(1.05); /* Slightly scale up on hover */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow on hover */
     }
   }

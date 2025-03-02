@@ -78,6 +78,9 @@
         margin-left: 0;
       }
     }
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.45); /* Add hover background change */
+    }
   }
   
   .secondaryControl {
@@ -86,5 +89,7 @@
   
     &:hover {
       background-color: rgba(255, 255, 255, 0.45);
+
+      
     }
   }

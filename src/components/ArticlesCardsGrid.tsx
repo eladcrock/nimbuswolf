@@ -158,7 +158,8 @@ export function ArticlesCardsGrid() {
   return (
     <div>
       <Container py="xl" data-aos="fade-in" data-aos-duration="2000">
-        
+        <br />
+        <br />
         <Title className={classes.heading}>Our Work {' '}
          <Text component="span" variant="gradient" gradient={{ from: 'red', to: 'violet' }} inherit>
             Speaks
