@@ -1,5 +1,6 @@
 import AOS from 'aos';
-import { Button, Group, useMantineColorScheme } from '@mantine/core';
+import { ActionIcon, Group, useMantineColorScheme, rem } from '@mantine/core';
+import { Sun, Moon } from 'lucide-react';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 
@@ -7,51 +8,35 @@ export function ColorSchemeToggle() {
   useEffect(() => {
     AOS.init();
   }, []);
-  const { setColorScheme } = useMantineColorScheme();
+
+  const { colorScheme, setColorScheme } = useMantineColorScheme();
+  const isDark = colorScheme === 'dark';
 
   return (
     <Group justify="center" mt="xl" data-aos="fade-in" data-aos-duration="2500">
-      <Button
+      <ActionIcon
         variant="gradient"
-        gradient={{ from: '#ffffff', to: '#b0b0b0', deg: 45 }} // White to medium gray
-        onClick={() => setColorScheme('light')}
+        gradient={
+          isDark
+            ? { from: '#ffffff', to: '#b0b0b0', deg: 45 }
+            : { from: '#4b0082', to: '#8a2be2', deg: 155 }
+        }
+        onClick={() => setColorScheme(isDark ? 'light' : 'dark')}
+        size={rem(48)}
+        radius="xl"
         style={{
-          width: '8rem', // Adjust button width
-          boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', // Add drop shadow
-          transition: 'transform 0.2s ease', // Add transition for transform
-          color: '#333333', // Dark text for better contrast
+          boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+          transition: 'transform 0.2s ease',
         }}
         onMouseEnter={(e) => {
-          e.currentTarget.style.transform = 'scale(1.05)'; // Scale up on hover
+          e.currentTarget.style.transform = 'scale(1.1)';
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.transform = 'scale(1)'; // Reset scale on leave
+          e.currentTarget.style.transform = 'scale(1)';
         }}
       >
-        Light
-      </Button>
-      <Button
-        variant="gradient"
-        gradient={{
-          from: '#4b0082', // Indigo for a deeper color
-          to: '#8a2be2', // BlueViolet for a richer gradient
-          deg: 155,
-        }}
-        onClick={() => setColorScheme('dark')}
-        style={{
-          width: '8rem', // Adjust button width
-          boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', // Add drop shadow
-          transition: 'transform 0.2s ease', // Add transition for transform
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.transform = 'scale(1.05)'; // Scale up on hover
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.transform = 'scale(1)'; // Reset scale on leave
-        }}
-      >
-        Dark
-      </Button>
+        {isDark ? <Sun size={24} color="#333" /> : <Moon size={24} color="#fff" />}
+      </ActionIcon>
     </Group>
   );
 }

@@ -1,10 +1,9 @@
 import '@mantine/core/styles.css';
 
-import { MantineProvider } from '@mantine/core';
+import { MantineProvider, } from '@mantine/core';
 import { Router } from './Router';
 import { theme } from './theme';
 import { HeaderSimple } from './components/HeaderSimple';
-import '@mantine/core/styles.css';
 
 import { HeroImageBackground } from "./components/hero";
 import { FeaturesImages } from "./components/FeaturesImages";

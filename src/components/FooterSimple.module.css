@@ -20,3 +20,6 @@
       margin-top: var(--mantine-spacing-md);
     }
   }
+  .modalInner {
+    margin-top: rem(64px); /* Offset for the sticky navbar */
+  }

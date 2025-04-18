@@ -63,6 +63,9 @@ export function FooterSimple() {
       <Modal
         opened={modalOpened}
         onClose={handleModalClose}  // Use the correct close function here
+        classNames={{
+          inner: classes.modalInner, // Add a custom class for the modal's inner container
+        }}
       >
         {/* Pass the handleModalClose function as onClose */}
         <GetInTouchSimple setOpened={setModalOpened} onClose={handleModalClose} />

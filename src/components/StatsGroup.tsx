@@ -8,20 +8,19 @@ import { useEffect } from 'react';
 
 const data = [
   {
-    title: 'Membership inquiries',
-    stats: '+25%',
-    description: "Boosted website traffic by 40% and generated a 25% increase in new membership inquiries within the first month of launch.",
+    title: 'Customer inquiries',
+    stats: '+200%',
+    description: 'Inquiries increased by over 200%—including 115+ leads in 6 months and a 12-inquiry spike within the first month of launch.',
   },
   {
-
-    title: 'Watch time',
+    title: 'YouTube engagement',
     stats: '+150%',
-    description: 'After implementing a compelling intro, increased channel viewership by 50% and extended the average watch time per viewer from 2 minutes to 5 minutes.',
+    description: 'Watch time jumped by 150%, growing from 2 to 5 minutes per viewer thanks to a fresh intro and better storytelling.',
   },
   {
-    title: 'Completed orders',
-    stats: '+35%',
-    description: 'Optimized the checkout process and increased the number of completed orders within the first month of launch.',
+    title: 'Operational efficiency',
+    stats: '+40%',
+    description: 'Saved the restaurant over 40% in manual admin time through custom tools that streamlined orders and kitchen coordination.',
   },
 ];
 

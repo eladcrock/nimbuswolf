@@ -22,7 +22,7 @@ export function HeroTitle() {
   return (
     <div data-aos="fade-in" data-aos-duration="2000" className={classes.wrapper}>
       <Container size={700} className={classes.inner}>
-        <h1 className={classes.title}>
+        <h1 className={classes.title} >
           Nice to{' '}
           <Text component="span" variant="gradient" gradient={{ from: 'blue', to: 'cyan' }} inherit>
             meet
@@ -30,12 +30,12 @@ export function HeroTitle() {
           you
         </h1>
 
-        <Text className={classes.description} color="dimmed">
+        <Text className={classes.description} color="dimmed"  >
           <p>
             We are a family-owned business driven by creativity and innovation, specializing in
             motion graphics, branding, website/app development, and creative solutions.
           </p>
-          We are proudly based in the Bay Area, but our expertise knows no bounds. We're fully
+          Proudly based in the Bay Area, but our expertise knows no bounds. We're fully
           equipped to collaborate with clients from any region, bringing creative visions to life
           wherever you're located.
           <p></p>
@@ -62,6 +62,9 @@ export function HeroTitle() {
       <Modal
         opened={modalOpened}
         onClose={handleModalClose} // Close the modal and handle delayed scroll to top
+        classNames={{
+          inner: classes.modalInner, // Add a custom class for the modal's inner container
+        }}
       >
         <GetInTouchSimple onClose={handleModalClose} setOpened={function (value: SetStateAction<boolean>): void {
           throw new Error('Function not implemented.');

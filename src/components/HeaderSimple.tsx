@@ -1,10 +1,11 @@
 import { useState, useEffect, SetStateAction } from 'react';
-import { Burger, Container, Group, Anchor, Modal } from '@mantine/core';
+import { Burger, Container, Group, Modal } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import classes from './HeaderSimple.module.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { GetInTouchSimple } from './GetInTouchSimple'; // Ensure the correct import path
+import { GetInTouchSimple } from './GetInTouchSimple';
+import { ColorSchemeToggle } from './ColorSchemeToggle/ColorSchemeToggle'; // Import the theme toggle
 
 const links = [
   { link: '#about', label: 'About' },
@@ -29,26 +30,23 @@ export function HeaderSimple() {
     if (link === '#contact') {
       setModalOpened(true);
     } else {
-      // Smooth scroll to the section
       const section = document.querySelector(link);
       if (section) {
         section.scrollIntoView({ behavior: 'smooth' });
       }
     }
 
-    // Close the menu if opened (mobile view)
     if (opened) {
-      toggle();
+      toggle(); // close mobile menu
     }
   };
 
   const handleModalClose = () => {
-    setModalOpened(false);  // Close the modal by setting the state to false
+    setModalOpened(false);
 
-    // Delay the scroll to top action after modal is closed
     setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });  // Scroll to top after a delay
-    }, 500);  // Delay in milliseconds
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 500);
   };
 
   const items = links.map((link) => (
@@ -70,7 +68,13 @@ export function HeaderSimple() {
           {items}
         </Group>
 
-        <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
+        <div className={classes.colorSchemeWrapper}>
+          <ColorSchemeToggle /> {/* Move the toggle to the right corner */}
+        </div>
+
+        <Group className={classes.rightControls}>
+          <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
+        </Group>
       </Container>
 
       {opened && (
@@ -91,11 +95,25 @@ export function HeaderSimple() {
 
       <Modal
         opened={modalOpened}
-        onClose={handleModalClose}  // Use the handleModalClose function to handle closing the modal and scroll
+        onClose={handleModalClose}
+        overlayProps={{
+          blur: 2,
+        }}
+        classNames={{
+          inner: classes.modalInner, // Add a custom class for the modal's inner container
+        }}
+        styles={{
+          inner: {
+            marginTop: 'rem(120x)', // Offset for the sticky navbar
+          },
+        }}
       >
-        <GetInTouchSimple onClose={handleModalClose} setOpened={function (value: SetStateAction<boolean>): void {
-          throw new Error('Function not implemented.');
-        } } />
+        <GetInTouchSimple
+          onClose={handleModalClose}
+          setOpened={function (value: SetStateAction<boolean>): void {
+            throw new Error('Function not implemented.');
+          }}
+        />
       </Modal>
     </header>
   );

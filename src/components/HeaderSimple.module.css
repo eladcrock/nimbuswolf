@@ -1,35 +1,82 @@
+@import '@mantine/core/styles.css';
+
 .header {
-    
-    height: rem(56px);
-    margin-bottom: rem(120px);
-    background-color: var(--mantine-color-body);
-    border-bottom: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  height: rem(56px);
+  margin-bottom: rem(120px);
+  background-color: var(--mantine-color-body);
+  border-bottom: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.inner {
+  height: rem(56px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link {
+  display: block;
+  line-height: 1;
+  padding: rem(8px) rem(12px);
+  border-radius: var(--mantine-radius-sm);
+  text-decoration: none;
+  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
+  font-size: var(--mantine-font-size-sm);
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.link:hover {
+  background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
+  transform: scale(1.03);
+}
+
+[data-active] {
+  background: linear-gradient(to right, #4b0082, #8a2be2);
+  color: var(--mantine-color-white);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Menu */
+.mobileMenu {
+  position: absolute;
+  top: rem(56px);
+  right: 0;
+  width: 100%;
+  background-color: var(--mantine-color-body);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: rem(16px);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: rem(12px);
+  animation: slideDown 0.3s ease forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10%);
   }
-  
-  .inner {
-    height: rem(56px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .link {
-    display: block;
-    line-height: 1;
-    padding: rem(8px) rem(12px);
-    border-radius: var(--mantine-radius-sm);
-    text-decoration: none;
-    color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
-    font-size: var(--mantine-font-size-sm);
-    font-weight: 500;
-  
-    &:hover {
-      background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
-    }
-  
-    [data-mantine-color-scheme] &[data-active] {
-      background: linear-gradient(to right, #4b0082, #8a2be2);
-      color: var(--mantine-color-white);
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add drop shadow */
-    }
-  }
+}
+.colorSchemeWrapper {
+  position: absolute;
+  top: rem(-22px); /* Adjust vertical alignment */
+  right: rem(16px); /* Align to the right corner */
+  z-index: 1001; /* Ensure it stays above other elements */
+  transform: scale(0.8); /* Optional: Make it slightly smaller */
+
+}
+.modalInner {
+  margin-top: rem(64px); /* Offset for the sticky navbar */
+}

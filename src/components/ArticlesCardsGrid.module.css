@@ -46,9 +46,13 @@
   .description {
     text-align: center;
     margin-top: var(--mantine-spacing-xs);
+    margin-right: 1rem ;
+    margin-left : 1rem ;
   }
 
  
   
-
+  .modalInner {
+    margin-top: rem(30px); /* Offset for the sticky navbar */
+  }
   

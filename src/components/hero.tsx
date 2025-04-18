@@ -42,12 +42,13 @@ export function HeroImageBackground() {
       <Overlay color="#000" opacity={0.65} zIndex={1} />
 
       <div className={classes.inner}>
-        <Title className={classes.title}>
-          Empowering Innovation. {'  '}
-          <Text component="span" inherit className={classes.highlight}>
-            One vision at a time
-          </Text>
-        </Title>
+    <Title className={classes.title}>
+  Empowering Innovation.
+  <br />
+  <Text component="span" display="block" inherit className={classes.highlight}>
+    One vision at a time
+  </Text>
+</Title>
         <div style={{ marginBottom: '10em' }}></div>
 
         <Container size={640}>
@@ -77,7 +78,9 @@ export function HeroImageBackground() {
           <Modal
             opened={modalOpened}
             onClose={handleModalClose} // Use the handleModalClose function
-          >
+            classNames={{
+              inner: classes.modalInner, // Add a custom class for the modal's inner container
+            }}>
             <GetInTouchSimple onClose={handleModalClose} setOpened={function (value: SetStateAction<boolean>): void {
               throw new Error('Function not implemented.');
             } } /> {/* Pass the onClose function */}

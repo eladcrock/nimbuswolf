@@ -71,3 +71,6 @@
     box-shadow: 0 2px 4px rgba(255, 255, 255, 0.5); /* Adjust shadow for smaller screens */
   }
 }
+.modalInner {
+  margin-top: rem(64px); /* Offset for the sticky navbar */
+}

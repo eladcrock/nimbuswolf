@@ -22,8 +22,8 @@
     font-size: rem(62px);
     font-weight: 900;
     line-height: 1.1;
-    margin: 0;
-    padding: 0;
+  
+     padding: 0;
     color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
   
     @media (max-width: 768px) {
@@ -34,7 +34,9 @@
   
   .description {
     margin-top: var(--mantine-spacing-xl);
-    font-size: rem(24px);
+    font-size: rem(22px);
+    margin-right: 0.24rem ;
+    margin-left : 0.25rem ;
   
     @media (max-width: 768px) {
       font-size: rem(18px);
@@ -53,17 +55,24 @@
     height: rem(54px);
     padding-left: rem(38px);
     padding-right: rem(38px);
+    margin-left: rem(20px);
+    margin-right: rem(20px);
     transition: transform 0.2s ease, box-shadow 0.2s ease; /* Add transition for smooth animation */
   
     @media (max-width: 576px) {
       height: rem(54px);
       padding-left: rem(18px);
       padding-right: rem(18px);
+      margin-left: rem(10px);
+      margin-right: rem(10px);
       flex: 1;
     }
-
+  
     &:hover {
       transform: scale(1.05); /* Slightly scale up on hover */
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow on hover */
     }
+  }
+  .modalInner {
+    margin-top: rem(64px); /* Offset for the sticky navbar */
   }

@@ -19,6 +19,9 @@ export function EmailBanner() {
       <Modal
         opened={opened}
         onClose={() => setOpened(false)} // Close the modal when the close button is clicked
+        classNames={{
+          inner: classes.modalInner, // Add a custom class for the modal's inner container
+        }}
       >
         <GetInTouchSimple
           onClose={() => setOpened(false)}

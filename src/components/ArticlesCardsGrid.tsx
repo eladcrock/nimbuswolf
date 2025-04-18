@@ -19,6 +19,7 @@ import celsius from './images/celsius.png';
 import ddi from './images/ddi.png';
 import sofi from './images/sofi.png';
 import tip from './images/tip.png';
+import joey from './images/joey.png';
 import classes from './ArticlesCardsGrid.module.css';
 
 import 'aos/dist/aos.css';
@@ -41,10 +42,12 @@ const mockdata: Article[] = [
     id: 1,
     title: 'Benicia Boxing & Martial Arts: Multipage Website',
     image: boxing,
-    date: 'Web Design',
+    date: 'Web Design & Development',
     link: 'https://beniciabma.com/',
 
-    about: 'A professional website designed for a multidisciplinary martial arts and boxing gym. The client experienced immediate results with an increase in sign-up inquiries through the site’s contact form.',  },
+    about:
+      'A professional website designed for a multidisciplinary martial arts and boxing gym. The client experienced immediate results with an increase in sign-up inquiries through the site’s contact form.',
+  },
   {
     id: 2,
     title: 'So-Fi  Animated Advertisement',
@@ -62,8 +65,7 @@ const mockdata: Article[] = [
     image: bella,
     date: 'Web design: Digital & Canvas Art',
     link: 'https://eladcrock.github.io/artyouhim/',
-    about:
-      'A minimalist and visually appealing landing page created to showcase works. All Art on page is proudly crafted by the Nimbus Wolf team.',
+    about: 'Minimalist landing page showcasing works, all crafted by the Nimbus Wolf team.',
   },
   {
     id: 4,
@@ -72,10 +74,8 @@ const mockdata: Article[] = [
     date: 'App Development with Case Study',
     alternateLink: 'https://eladcrock.github.io/winwin/about.html', // Add the full study link
 
-
     link: 'https://embed.figma.com/proto/PlCxSrPOuDxxc5qKAgyZzq/Win-Win-App?node-id=15-9062&embed-host=share',
-    about:
-      'A social app aimed at connecting volunteers with opportunities, with linked in depth case study including user personas, and compelling custom infographics..',
+    about: 'Social app connecting volunteers with opportunities, featuring a detailed case study.',
   },
   {
     id: 5,
@@ -85,7 +85,15 @@ const mockdata: Article[] = [
     link: 'https://eladcrock.github.io/Bottega/',
 
     about:
-      'A custom-built tool for a famed Napa Valley restaurant, used to simplify tip calculations.  A one time implemenmtation that continues to save time and money.',
+"Part of a business tool-suite for a well-established restaurant, saving time and improving efficiency."
+
+
+
+
+
+
+
+
   },
 
   {
@@ -97,7 +105,7 @@ const mockdata: Article[] = [
     alternateLink: 'https://www.behance.net/gallery/183370413/Logo-animation',
 
     about:
-      'A dynamic logo animation created for a client in the finance industry with emerging podcast and youtube presence.',
+      'Dynamic logo animation created for a client in the finance industry with emerging podcast presence.',
   },
 
   {
@@ -119,6 +127,26 @@ const mockdata: Article[] = [
     about: 'A custom animated presentation created for a client with focus on new product launch.',
     alternateLink: 'https://www.behance.net/gallery/177303999/Argo-company-product-reveal',
   },
+  {
+    id: 9,
+    title: 'Joey\'s Bakery Website Launch',
+    image: joey,
+    date: 'Web Design & Development',
+    link: 'https://joeysbakery.netlify.app/',
+    about: 'Joey\'s Bakery\'s website offers a modern, user-friendly platform and has already generated a significant number of contact form inquiries.',
+  },
+  {
+    id: 10,
+    title: '3D Graphics for Jacka Documentary',
+    image: 'https://cdn.kqed.org/wp-content/uploads/sites/2/2024/01/74230867-CD39-47F5-94EC-B68551E46923.jpg',
+    date: '3D Art & Motion Graphics',
+    link: 'https://www.youtube.com/embed/mzpxWnQ0gLk?si=9wfZj4gVC_2xrBxy',
+    about: '3D animated visuals created for the upcoming Jacka documentary, enhancing its visual storytelling.',
+  }
+  
+  
+
+
 ];
 
 export function ArticlesCardsGrid() {
@@ -144,7 +172,15 @@ export function ArticlesCardsGrid() {
       style={{ cursor: 'pointer' }}
     >
       <AspectRatio ratio={1920 / 1080}>
-        <Image src={article.image} alt={article.title} />
+        {article.id === 5 ? (
+          <Image
+            src="https://img.freepik.com/premium-vector/3d-calculator-icon-3d-calculator-isolated-white-background-vector_682680-187.jpg"
+            alt={article.title}
+            style={{ width: '100%', height: '100%' }}
+          />
+        ) : (
+          <Image src={article.image} alt={article.title} />
+        )}
       </AspectRatio>
       <Text c="dimmed" size="xs" tt="uppercase" fw={700} mt="md">
         {article.date}
@@ -154,78 +190,97 @@ export function ArticlesCardsGrid() {
       </Text>
     </Card>
   ));
+  
 
   return (
     <div>
       <Container py="xl" data-aos="fade-in" data-aos-duration="2000">
         <br />
         <br />
-        <Title className={classes.heading}>Our Work {' '}
-         <Text component="span" variant="gradient" gradient={{ from: 'red', to: 'violet' }} inherit>
+        <Title className={classes.heading}>
+          Our Work{' '}
+          <Text
+            component="span"
+            variant="gradient"
+            gradient={{ from: 'red', to: 'violet' }}
+            inherit
+          >
             Speaks
           </Text>{' '}
-           for Itself </Title>
+          for Itself{' '}
+        </Title>
         <Text c="dimmed" className={classes.description}>
-          From web development, to advertisement and custom business tools, here are a few areas where we've made a difference.
+          From web development, to branding and custom tools, here are a few areas
+          where we've made a difference.
         </Text>
         <br />
         <SimpleGrid cols={{ base: 1, sm: 2 }}>{cards}</SimpleGrid>
       </Container>
       <Modal
-  opened={modalOpened}
-  onClose={() => setModalOpened(false)}
-  title={<Text fw={700}>{selectedArticle?.title}</Text>}
-  styles={{
-    body: {
-      maxHeight: '80vh',
-      overflowY: 'auto',
-    },
-  }}
->
-  {selectedArticle && (
-    <>
-      {/* Embed project in an iframe */}
-      <AspectRatio ratio={16 / 15} mb="md">
-        <iframe
-          src={selectedArticle.link}
-          title={selectedArticle.title}
-          style={{
-            width: '100%',
-            height: '100%',
-            border: 'none',
-          }}
-        />
-      </AspectRatio>
-
-      {/* About text */}
-      <Text>{selectedArticle.about}</Text>
-      <br />
-
-      {/* Visit Project button with alternateLink condition */}
-      <Button
-      
-        fullWidth
-        component="a"
-        href={selectedArticle.alternateLink || selectedArticle.link}
-        target="_blank"
-        mt="md"
-        variant="gradient" 
-        gradient={{
-          from: 'cyan', // Soft purple for visual appeal
-          to: 'blue', // Lighter purple for a smoother transition
-          deg: 155,
-          
-
-          
+        opened={modalOpened}
+        onClose={() => setModalOpened(false)}
+        title={<Text fw={700}>{selectedArticle?.title}</Text>}
+        styles={{
+          body: {
+            maxHeight: '80vh',
+            overflowY: 'auto',
+          },
         }}
-
+        classNames={{
+          inner: classes.modalInner, // Add a custom class for the modal's inner container
+        }}
       >
-        {selectedArticle.alternateLink ? 'Learn More' : 'Visit Project'}
-      </Button>
-    </>
-  )}
-</Modal>
+        {selectedArticle && (
+          <>
+            {/* Embed project in an iframe */}
+            <AspectRatio ratio={16 / 15} mb="md">
+              {selectedArticle?.id === 5 ? ( // Check for the "Tip" project's ID
+                <a
+                  href="https://www.shutterstock.com/image-vector/3d-calculator-pinkyellow-color-vector-260nw-2513908303.jpg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="https://st2.depositphotos.com/1007449/8791/i/450/depositphotos_87911216-stock-photo-3d-man-working-and-calculate.jpg"
+                    alt={selectedArticle.title}
+                    style={{ width: '100%', height: '100%' }}
+                  />
+                </a>
+              ) : (
+                <iframe
+                  src={selectedArticle.link}
+                  title={selectedArticle.title}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    border: 'none',
+                  }}
+                />
+              )}
+            </AspectRatio>
 
+            {/* About text */}
+            <Text>{selectedArticle.about}</Text>
+
+            {/* Visit Project button with alternateLink condition */}
+            <Button
+              fullWidth
+              component="a"
+              href={selectedArticle.alternateLink || selectedArticle.link}
+              target="_blank"
+              mt="md"
+              variant="gradient"
+              gradient={{
+                from: 'cyan', // Soft purple for visual appeal
+                to: 'blue', // Lighter purple for a smoother transition
+                deg: 155,
+              }}
+            >
+              {selectedArticle.alternateLink ? 'Learn More' : 'Visit Project'}
+            </Button>
+          </>
+        )}
+      </Modal>
     </div>
   );
 }
