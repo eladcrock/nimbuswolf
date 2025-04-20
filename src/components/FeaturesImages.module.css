@@ -32,9 +32,8 @@
 }
 
 .description {
-  text-align: centert;
+  text-align: center;
   margin-top: var(--mantine-spacing-xs);
-
 }
 
 .highlight {

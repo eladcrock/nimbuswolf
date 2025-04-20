@@ -18,9 +18,9 @@ import boxing from './images/boxing.png';
 import celsius from './images/celsius.png';
 import ddi from './images/ddi.png';
 import sofi from './images/sofi.png';
-import tip from './images/tip.png';
 import joey from './images/joey.png';
 import classes from './ArticlesCardsGrid.module.css';
+import tools from './images/tools.png';
 
 import 'aos/dist/aos.css';
 import '@mantine/core/styles.css';
@@ -49,7 +49,7 @@ const mockdata: Article[] = [
       'A professional website designed for a multidisciplinary martial arts and boxing gym. The client experienced immediate results with an increase in sign-up inquiries through the site’s contact form.',
   },
   {
-    id: 2,
+    id: 5,
     title: 'So-Fi  Animated Advertisement',
     image: sofi,
     date: 'Motion Graphics for Marketing',
@@ -77,17 +77,17 @@ const mockdata: Article[] = [
     link: 'https://embed.figma.com/proto/PlCxSrPOuDxxc5qKAgyZzq/Win-Win-App?node-id=15-9062&embed-host=share',
     about: 'Social app connecting volunteers with opportunities, featuring a detailed case study.',
   },
+
+  
   {
-    id: 5,
-    title: 'Check-out Calculator for Service Staff',
-    image: tip,
+    id: 2,
+    title: 'Service Tools: Custom Business Suite',
+    image : tools,
     date: 'Custom Business Tools',
-    link: 'https://eladcrock.github.io/Bottega/',
+    link: 'https://servicetools.netlify.app/',
 
     about:
-"Part of a business tool-suite for a well-established restaurant, saving time and improving efficiency."
-
-
+"Mobile-first staff utility for accessing wine notes, food descriptions, cocktail recipes, and training tools. Includes smart search for allergens, location filters, and service calculators—everything staff needs, all in one place. Demo version shows full functionality without exposing sensitive data. Password: '2025'.",
 
 
 
@@ -172,15 +172,9 @@ export function ArticlesCardsGrid() {
       style={{ cursor: 'pointer' }}
     >
       <AspectRatio ratio={1920 / 1080}>
-        {article.id === 5 ? (
-          <Image
-            src="https://img.freepik.com/premium-vector/3d-calculator-icon-3d-calculator-isolated-white-background-vector_682680-187.jpg"
-            alt={article.title}
-            style={{ width: '100%', height: '100%' }}
-          />
-        ) : (
+    
           <Image src={article.image} alt={article.title} />
-        )}
+      
       </AspectRatio>
       <Text c="dimmed" size="xs" tt="uppercase" fw={700} mt="md">
         {article.date}
@@ -234,31 +228,16 @@ export function ArticlesCardsGrid() {
           <>
             {/* Embed project in an iframe */}
             <AspectRatio ratio={16 / 15} mb="md">
-              {selectedArticle?.id === 5 ? ( // Check for the "Tip" project's ID
-                <a
-                  href="https://www.shutterstock.com/image-vector/3d-calculator-pinkyellow-color-vector-260nw-2513908303.jpg"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="https://st2.depositphotos.com/1007449/8791/i/450/depositphotos_87911216-stock-photo-3d-man-working-and-calculate.jpg"
-                    alt={selectedArticle.title}
-                    style={{ width: '100%', height: '100%' }}
-                  />
-                </a>
-              ) : (
-                <iframe
-                  src={selectedArticle.link}
-                  title={selectedArticle.title}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    border: 'none',
-                  }}
-                />
-              )}
-            </AspectRatio>
-
+  <iframe
+    src={selectedArticle.link}
+    title={selectedArticle.title}
+    style={{
+      width: '100%',
+      height: '100%',
+      border: 'none',
+    }}
+  />
+</AspectRatio>
             {/* About text */}
             <Text>{selectedArticle.about}</Text>
 
@@ -276,7 +255,7 @@ export function ArticlesCardsGrid() {
                 deg: 155,
               }}
             >
-              {selectedArticle.alternateLink ? 'Learn More' : 'Visit Project'}
+              {selectedArticle.alternateLink ? 'Learn More' : 'Live Demo'}
             </Button>
           </>
         )}

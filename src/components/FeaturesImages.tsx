@@ -29,21 +29,15 @@ const data = [
     image: 'photo',
     title: 'Motion Graphics & 3D Animation',
     description:
-      "Breathtaking animations that captivate and bring your story to life.",
+      "Breathtaking animations that captivate and communicate your story in a way static designs can't.",
   },
   {
     image: 'chart',
-title: 'Small Business Solutions',
-description:
-'Empower your operations with customized tools to optimize efficiency and drive growth.',
+    title: 'Social Media Content',
+    description:
+      'Enhance your brand’s online presence with tailored strategies and compelling content that engages your audience.',
+  },
 
-
-
-
-
-
-
-},
 
 ];
 
@@ -80,8 +74,6 @@ export function FeaturesImages() {
       data-aos="fade-in"
       data-aos-offset="300"
       data-aos-easing="ease-in-sine"
-      style={{ marginRight: '1rem', marginLeft: '0.5em' }}
-
     >
       <Text className={classes.supTitle}>our Services</Text>
 
@@ -99,6 +91,7 @@ export function FeaturesImages() {
 
       <Container size={660} p={0}>
         <Text c="dimmed" className={classes.description}>
+          Nimbus Wolf Studios crafts creative solutions that resonate, engage, to deliver results.
           Explore our services to see how we can bring your goals into focus.
         </Text>
       </Container>
