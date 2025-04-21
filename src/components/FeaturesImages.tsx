@@ -31,12 +31,14 @@ const data = [
     description:
       "Breathtaking animations that captivate and communicate your story in a way static designs can't.",
   },
-  {
-    image: 'chart',
-    title: 'Social Media Content',
-    description:
-      'Enhance your brand’s online presence with tailored strategies and compelling content that engages your audience.',
-  },
+  
+    {
+      image: 'chart',
+      title: 'Small Business Solutions',
+      description:
+        'Streamline your operations with automated systems for payroll, invoicing, communication, supply management, and more.',
+    }
+     
 
 
 ];
