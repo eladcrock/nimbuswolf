@@ -6,6 +6,7 @@ import 'aos/dist/aos.css';
 
 
 import 'aos/dist/aos.css';
+import MyScene from '../Scene';
 
 export function Welcome() {
   return (
@@ -19,6 +20,7 @@ export function Welcome() {
       <Text c="dimmed" ta="center" size="lg" maw={580} mx="auto" mt="xl" >
       Whether it’s motion graphics, branding, or a cutting-edge website, we’ve got you covered. Our team is dedicated to crafting tailored solutions that elevate your brand and engage your audience at every touchpoint.     </Text>
     </div>
+    
   );
 }
 

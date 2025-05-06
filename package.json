@@ -27,6 +27,7 @@
     "@mantine/hooks": "^7.14.1",
     "@mantine/modals": "^7.14.1",
     "@mantine/tiptap": "^7.14.1",
+    "@splinetool/react-spline": "^4.0.0",
     "@tabler/icons": "^3.22.0",
     "@tiptap/extension-link": "^2.9.1",
     "@tiptap/pm": "^2.9.1",
