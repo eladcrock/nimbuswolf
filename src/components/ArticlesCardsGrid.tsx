@@ -21,6 +21,8 @@ import sofi from './images/sofi.png';
 import joey from './images/joey.png';
 import classes from './ArticlesCardsGrid.module.css';
 import tools from './images/tools.png';
+import drey from './images/drey.png';
+import wkfLogo from './images/wkfLogo.png';
 
 import 'aos/dist/aos.css';
 import '@mantine/core/styles.css';
@@ -142,7 +144,26 @@ const mockdata: Article[] = [
     date: '3D Art & Motion Graphics',
     link: 'https://www.youtube.com/embed/mzpxWnQ0gLk?si=9wfZj4gVC_2xrBxy',
     about: '3D animated visuals created for the upcoming Jacka documentary, enhancing its visual storytelling.',
-  }
+  },
+  {
+    id: 11,
+    title: 'Visual Artist Portfolio',
+    image: drey,
+    date: 'Web Design & Development',
+    link: 'https://Audreypax.netlify.app/',
+    about: 'A portfolio website designed for a visual artist, showcasing their work and enhancing their online presence.',
+  },
+  {
+  id: 12,
+  title: 'WKF 501c3 Nonprofit Website',
+  image: wkfLogo,
+  date: 'Web Design & Development',
+  link: 'https://wkfoundation.netlify.app/',
+  about: 'A website designed for a nonprofit organization, enhancing their online presence and outreach efforts.',
+},  
+
+  
+  
   
   
 
