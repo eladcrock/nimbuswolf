@@ -16,13 +16,13 @@ const data = [
     title: 'YouTube engagement',
     stats: '+162%',
     description:
-      'Watch time jumped by 150%, growing from 2 to 5 minutes per viewer thanks to a fresh intro and better storytelling.',
+      'Watch time jumped by 162%, growing from 2 to 5 minutes per viewer thanks to a fresh intro and better storytelling.',
   },
   {
     title: 'Operational efficiency',
     stats: '+55%',
     description:
-      'Saved the restaurant over 40% in manual admin time through custom tools that streamlined orders and kitchen coordination.',
+      'Saved the restaurant over 55% in manual admin time through custom tools that streamlined orders and kitchen coordination.',
   },
 ];
 
